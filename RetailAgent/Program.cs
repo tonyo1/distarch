@@ -54,7 +54,7 @@ public class Program
             var conf = new ConsumerConfig
             {
                 GroupId = "test-consumer-group",
-                BootstrapServers = "localhost:29092",
+                BootstrapServers = "localhost:9092",
   //EnableAutoCommit = false,
 
             };
@@ -87,7 +87,7 @@ public class Producer<T>
     public Producer()
     {
         _host = "localhost";
-        _port = 29092;
+        _port = 9092;
         _topic = "posretail_c2_s2";
     }
 
@@ -108,20 +108,5 @@ public class Producer<T>
         {
             await producer.ProduceAsync(_topic, new Message<Null, T> { Value = data });
         }
-    }
-}
-
-public class Bannana
-{
-    public string Name { get; set; } = "";
-    public int Price { get; set; } = 1;
-    public DateTime TS { get; set; } = DateTime.Now;
-
-}
-public class CustomValueSerializer<Bannana> : Confluent.Kafka.ISerializer<Bannana>
-{
-    public byte[] Serialize(Bannana data, SerializationContext ctx)
-    {
-        return Encoding.ASCII.GetBytes(JsonConvert.SerializeObject(data));
     }
 }

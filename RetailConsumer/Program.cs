@@ -33,7 +33,7 @@ public class Program
             var conf = new ConsumerConfig
             {
                 GroupId = "primary",
-                BootstrapServers = "localhost:29092",
+                BootstrapServers = "localhost:9092",
                 EnableAutoCommit = false,
                 AutoOffsetReset = AutoOffsetReset.Latest,
 
@@ -49,7 +49,7 @@ public class Program
                 var cr = c.Consume();
                 
                 c.Commit(cr);
-                Console.WriteLine($"Consumed message '{cr.Value}' at: '{cr.TopicPartitionOffset}  '{cr.Topic}'  '{cr.TopicPartitionOffset}''.");
+                Console.WriteLine($"Consumed message '{cr.Message.Value}' at: '{cr.TopicPartitionOffset}  .");
             }
         }
         catch (Exception e)
