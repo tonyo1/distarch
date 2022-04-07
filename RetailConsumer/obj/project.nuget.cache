@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "dgSpecHash": "VasnMAeYyHxw+4aBYWTM5PENxLCHpqFh4u9Qi4qiw0Rerv9lHyuInTS16VSQ+xQqfJeUCkYQZf5mJS34j/EngQ==",
+  "success": true,
+  "projectFilePath": "/Users/tony/_dev/distarch/RetailConsumer/RetailConsumer.csproj",
+  "expectedPackageFiles": [
+    "/Users/tony/.nuget/packages/librdkafka.redist/1.8.2/librdkafka.redist.1.8.2.nupkg.sha512",
+    "/Users/tony/.nuget/packages/newtonsoft.json/13.0.1/newtonsoft.json.13.0.1.nupkg.sha512",
+    "/Users/tony/.nuget/packages/system.memory/4.5.0/system.memory.4.5.0.nupkg.sha512",
+    "/Users/tony/.nuget/packages/confluent.kafka/1.8.2/confluent.kafka.1.8.2.nupkg.sha512"
+  ],
+  "logs": []
+}

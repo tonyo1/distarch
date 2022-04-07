@@ -1,0 +1,3 @@
+docker-compose -f dcsql.yml up -d
+
+docker-compose -f dcsql.yml down
