@@ -1,3 +1,8 @@
-docker-compose -f dcsql.yml up -d
+ 
+docker compose exec ksqldb-server ksql http://localhost:8088
 
-docker-compose -f dcsql.yml down
+CREATE STREAM  stry1 (Name VARCHAR, Price INT) WITH (kafka_topic='posretail_c2_s2', value_format='json');
+
+SELECT * FROM stry1 EMIT CHANGES;
+
+DROP STREAM  stry1;

@@ -345,6 +345,20 @@
         "runtime": {
           "bin/placeholder/Confluent.Kafka.dll": {}
         }
+      },
+      "dtoLib/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Confluent.Kafka": "1.8.2",
+          "Newtonsoft.Json": "13.0.1"
+        },
+        "compile": {
+          "bin/placeholder/dtoLib.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/dtoLib.dll": {}
+        }
       }
     }
   },
@@ -1595,12 +1609,18 @@
       "type": "project",
       "path": "../confluent-kafka-dotnet/src/Confluent.Kafka/Confluent.Kafka.csproj",
       "msbuildProject": "../confluent-kafka-dotnet/src/Confluent.Kafka/Confluent.Kafka.csproj"
+    },
+    "dtoLib/1.0.0": {
+      "type": "project",
+      "path": "../dtoLib/dtoLib.csproj",
+      "msbuildProject": "../dtoLib/dtoLib.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
       "Confluent.Kafka >= 1.8.2",
-      "Newtonsoft.Json >= 13.0.1"
+      "Newtonsoft.Json >= 13.0.1",
+      "dtoLib >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -1630,6 +1650,9 @@
           "projectReferences": {
             "/Users/tony/_dev/distarch/confluent-kafka-dotnet/src/Confluent.Kafka/Confluent.Kafka.csproj": {
               "projectPath": "/Users/tony/_dev/distarch/confluent-kafka-dotnet/src/Confluent.Kafka/Confluent.Kafka.csproj"
+            },
+            "/Users/tony/_dev/distarch/dtoLib/dtoLib.csproj": {
+              "projectPath": "/Users/tony/_dev/distarch/dtoLib/dtoLib.csproj"
             }
           }
         }

@@ -1,21 +1,16 @@
-﻿using System;
-using System.Net;
- 
-using System.Threading.Tasks;
-using System.Diagnostics;
+﻿
 using Confluent.Kafka;
 using Newtonsoft.Json;
-using System.Text;
-
+using DtoLib;
 public class Program
 {
     static int cnt = 0;
     public static void Main(string[] args)
     {
-        
+
 
         Console.WriteLine("Hello, World!");
-        while(true)
+        while (true)
         {
             Produce();
             System.ConsoleKeyInfo message = Console.ReadKey();
@@ -24,58 +19,29 @@ public class Program
                 break;
             }
         }
-     
-      
+
+
     }
 
     private static void Produce()
     {
         var producer = new Producer<Bannana>();
 
-        for (int i = 0; i < 1; i++)
-        {
-             
-            var bannana = new Bannana
-            {
 
-                Name = "Bannana " + cnt++,
-                Price = i +1,
-            };
-            Console.WriteLine("Producing: " + JsonConvert.SerializeObject(bannana));
-            producer.ProduceAsync(bannana);
-        }
-        Console.Read();
+        var bn = new Bannana
+        {
+            Name = "Bannana" + cnt++,
+            Price = cnt++ * 10
+        };
+
+
+        Console.WriteLine("Producing: " + JsonConvert.SerializeObject(bn));
+        producer.ProduceAsync(bn);
     }
 
-    private static void Consume()
-    {
-        try
-        {
-            var conf = new ConsumerConfig
-            {
-                GroupId = "test-consumer-group",
-                BootstrapServers = "localhost:9092",
-  //EnableAutoCommit = false,
-
-            };
-
-            using var c = new ConsumerBuilder<Ignore, string>(conf).Build();
-            c.Subscribe("test2");
-            while (true)
-            {
-                 Console.WriteLine(   "while (true)");
-
-                var cr = c.Consume();
-                Console.WriteLine($"Consumed message '{cr.Value}' at: '{cr.TopicPartitionOffset}'.");
-            }
-        }
-        catch (Exception e)
-        {
-            Console.WriteLine(e);
-        }
-
-    }
 }
+
+
 
 public class Producer<T>
 {
@@ -96,7 +62,17 @@ public class Producer<T>
         return new ProducerConfig
         {
             BootstrapServers = $"{_host}:{_port}",
-           
+            Debug = "msg",
+
+            // retry settings:
+            // Receive acknowledgement from all sync replicas
+            Acks = Acks.Leader,
+            // Number of times to retry before giving up
+            MessageSendMaxRetries = 3,
+            // Duration to retry before next attempt
+            RetryBackoffMs = 1000,
+            // Set to true if you don't want to reorder messages on retry
+            EnableIdempotence = true
         };
     }
 

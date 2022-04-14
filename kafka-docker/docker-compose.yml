@@ -114,7 +114,7 @@ services:
 
   
   ksqldb-server:
-    image: confluentinc/cp-ksqldb-server:7.0.1
+    image: confluentinc/cp-ksqldb-server:latest
     hostname: ksqldb-server
     container_name: ksqldb-server
     ports:
@@ -128,7 +128,7 @@ services:
       - kafka1
 
   zoonavigator:
-    image: elkozmon/zoonavigator:1.1.1
+    image: elkozmon/zoonavigator:latest
     container_name: zoonavigator
     ports:
       - "8004:8000"

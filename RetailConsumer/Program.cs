@@ -16,7 +16,7 @@ public class Program
         {
             Consume();
 
-        });
+        }, TaskCreationOptions.LongRunning);
 
         //
         Console.WriteLine("Hello, World!");
@@ -32,7 +32,7 @@ public class Program
         { 
             var conf = new ConsumerConfig
             {
-                GroupId = "primary",
+                GroupId = "5",
                 BootstrapServers = "localhost:9092",
                 EnableAutoCommit = false,
                 AutoOffsetReset = AutoOffsetReset.Latest,
@@ -40,11 +40,14 @@ public class Program
             };
 
             using var c = new ConsumerBuilder<Ignore, string>(conf).Build();
+            //c.Assign(new TopicPartitionOffset(TOPIC, 0, new Offset(321)));
             c.Subscribe(TOPIC);
             int i = 0;
+            
+      
             while (true)
             {  
-        
+             
                  Console.WriteLine("while");
                 var cr = c.Consume();
                 

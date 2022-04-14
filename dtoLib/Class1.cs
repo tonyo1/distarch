@@ -1,7 +1,8 @@
 ﻿using System.Text;
+using Confluent.Kafka;
+using Newtonsoft.Json;
 
 namespace DtoLib;
- 
 public class Bannana
 {
     public string Name { get; set; } = "";
