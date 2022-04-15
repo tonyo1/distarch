@@ -6,3 +6,6 @@ CREATE STREAM  stry1 (Name VARCHAR, Price INT) WITH (kafka_topic='posretail_c2_s
 SELECT * FROM stry1 EMIT CHANGES;
 
 DROP STREAM  stry1;
+
+
+
