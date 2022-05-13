@@ -7,8 +7,10 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 <ItemGroup>
+   <PackageReference Include="Serilog.Sinks.Console" Version="4.0.1" />
+   <PackageReference Include="Serilog.Sinks.Debug" Version="2.0.0" />
+   <PackageReference Include="Serilog.Sinks.File" Version="5.0.0" /> 
    <ProjectReference Include="..\.\dtoLib\dtoLib.csproj" />
   <ProjectReference Include="..\.\confluent-kafka-dotnet\src\Confluent.Kafka\Confluent.Kafka.csproj" />
-  <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
 </ItemGroup>
 </Project>

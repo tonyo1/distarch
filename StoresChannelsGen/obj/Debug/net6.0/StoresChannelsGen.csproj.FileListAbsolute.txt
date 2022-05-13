@@ -1,0 +1,17 @@
+/Users/tony/_dev/distarch/StoresChannelsGen/obj/Debug/net6.0/StoresChannelsGen.csproj.AssemblyReference.cache
+/Users/tony/_dev/distarch/StoresChannelsGen/obj/Debug/net6.0/StoresChannelsGen.GeneratedMSBuildEditorConfig.editorconfig
+/Users/tony/_dev/distarch/StoresChannelsGen/obj/Debug/net6.0/StoresChannelsGen.AssemblyInfoInputs.cache
+/Users/tony/_dev/distarch/StoresChannelsGen/obj/Debug/net6.0/StoresChannelsGen.AssemblyInfo.cs
+/Users/tony/_dev/distarch/StoresChannelsGen/obj/Debug/net6.0/StoresChannelsGen.csproj.CoreCompileInputs.cache
+/Users/tony/_dev/distarch/StoresChannelsGen/bin/Debug/net6.0/StoresChannelsGen
+/Users/tony/_dev/distarch/StoresChannelsGen/bin/Debug/net6.0/StoresChannelsGen.deps.json
+/Users/tony/_dev/distarch/StoresChannelsGen/bin/Debug/net6.0/StoresChannelsGen.runtimeconfig.json
+/Users/tony/_dev/distarch/StoresChannelsGen/bin/Debug/net6.0/StoresChannelsGen.dll
+/Users/tony/_dev/distarch/StoresChannelsGen/bin/Debug/net6.0/ref/StoresChannelsGen.dll
+/Users/tony/_dev/distarch/StoresChannelsGen/bin/Debug/net6.0/StoresChannelsGen.pdb
+/Users/tony/_dev/distarch/StoresChannelsGen/bin/Debug/net6.0/Newtonsoft.Json.dll
+/Users/tony/_dev/distarch/StoresChannelsGen/obj/Debug/net6.0/StoresChannelsGen.csproj.CopyComplete
+/Users/tony/_dev/distarch/StoresChannelsGen/obj/Debug/net6.0/StoresChannelsGen.dll
+/Users/tony/_dev/distarch/StoresChannelsGen/obj/Debug/net6.0/ref/StoresChannelsGen.dll
+/Users/tony/_dev/distarch/StoresChannelsGen/obj/Debug/net6.0/StoresChannelsGen.pdb
+/Users/tony/_dev/distarch/StoresChannelsGen/obj/Debug/net6.0/StoresChannelsGen.genruntimeconfig.cache

@@ -31,9 +31,9 @@ services:
       KAFKA_TRANSACTION_STATE_LOG_MIN_ISR: 1
       KAFKA_JMX_PORT: 9999
       KAFKA_JMX_HOSTNAME: ${DOCKER_HOST_IP:-127.0.0.1}
-      KAFKA_AUTHORIZER_CLASS_NAME: kafka.security.authorizer.AclAuthorizer
-      KAFKA_ALLOW_EVERYONE_IF_NO_ACL_FOUND: "true"
-      KAFKA_CREATE_TOPICS: "posretail_c2_s1:1:1,posretail_c2_s2:1:1,posretail_c2_s3:1:1,posretail_c2_s4:1:1,posretail_c2_s5:1:1,posretail_c2_s6:1:1,posretail_c2_s7:1:1,posretail_c2_s8:1:1,posretail_c2_s9:1:1"
+      #KAFKA_AUTHORIZER_CLASS_NAME: kafka.security.authorizer.AclAuthorizer
+      #KAFKA_ALLOW_EVERYONE_IF_NO_ACL_FOUND: "true"
+      KAFKA_CREATE_TOPICS: "retail_server_c299_s9999_cmd:1:1"
       
     depends_on:
       - zoo1

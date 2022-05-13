@@ -6,10 +6,10 @@ using System.Diagnostics;
 using Confluent.Kafka;
 using Newtonsoft.Json;
 using System.Text;
-
+using DtoLib;
 public class Program
 {
-    const string TOPIC = "posretail_c2_s2";
+    const string TOPIC = "retail_server_c299_s9999_cmd";
     public static void Main(string[] args)
     {
         Task.Factory.StartNew(() =>
@@ -25,32 +25,26 @@ public class Program
         Console.ReadKey();
     }
 
-     private static void Consume()
+    private static void Consume()
     {
 
         try
-        { 
-            var conf = new ConsumerConfig
-            {
-                GroupId = "5",
-                BootstrapServers = "localhost:9092",
-                EnableAutoCommit = false,
-                AutoOffsetReset = AutoOffsetReset.Latest,
-
-            };
-
-            using var c = new ConsumerBuilder<Ignore, string>(conf).Build();
-            //c.Assign(new TopicPartitionOffset(TOPIC, 0, new Offset(321)));
+        {
+  
+            using var c = new ConsumerBuilder<StoreCommandType, string>(GetConfig()).Build();
             c.Subscribe(TOPIC);
-            int i = 0;
-            
-      
+         
             while (true)
-            {  
-             
-                 Console.WriteLine("while");
-                var cr = c.Consume();
-                
+            { 
+                Console.WriteLine("while");
+                ConsumeResult<StoreCommandType, string> cr = c.Consume();
+
+                switch (cr.Message.Key)
+                {
+                    case StoreCommandType.Associate:
+
+                        break;
+                }
                 c.Commit(cr);
                 Console.WriteLine($"Consumed message '{cr.Message.Value}' at: '{cr.TopicPartitionOffset}  .");
             }
@@ -59,18 +53,17 @@ public class Program
         {
             Console.WriteLine(e);
         }
-    }
-}
 
-public class Bannana
-{
-    public string Name { get; set; } = "";
-    public int Price { get; set; } = 1;
-}
-public class CustomValueSerializer<Bannana> : Confluent.Kafka.ISerializer<Bannana>
-{
-    public byte[] Serialize(Bannana data, SerializationContext ctx)
-    {
-        return Encoding.ASCII.GetBytes(JsonConvert.SerializeObject(data));
+        static ConsumerConfig GetConfig()
+        {
+            return new ConsumerConfig
+            {
+                GroupId = "primary",
+                BootstrapServers = "localhost:9092",
+                EnableAutoCommit = false,
+                AutoOffsetReset = AutoOffsetReset.Earliest,
+
+            };
+        }
     }
 }

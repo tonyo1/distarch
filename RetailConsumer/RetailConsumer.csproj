@@ -11,6 +11,7 @@
  
   <ProjectReference Include="..\.\confluent-kafka-dotnet\src\Confluent.Kafka\Confluent.Kafka.csproj" />
   <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+  <ProjectReference Include="..\.\dtoLib\dtoLib.csproj" />
 </ItemGroup>
  
 </Project>

@@ -1,0 +1,22 @@
+
+
+retailagent
+    Produces "Store Command Message"
+    {
+        Chain,Store,ICommand
+    }
+    
+    IStoreCommand
+    {
+        Type, // receiver agrees to accept any ICommand, and handly the [type] appropriatly
+        Targets, // {T-1,T-3,T-4} ,{R-1,R-3,R-4}
+        Payload, // open ended, maybe generic 
+    }
+
+
+retailstoreagent
+    Receives IStoreCommand and 
+    1. Routes to specified targets for further processing (might send more than one message)
+    2. Appropriately exec the command and 
+        A  producers results on the outgoing telmetry queue?
+        B  logs to local files system, 
